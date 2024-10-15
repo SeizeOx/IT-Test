@@ -1,0 +1,20 @@
+---
+
+- hosts: docker
+  become: true
+  tasks:
+
+  - name: Install Github
+    ansible.builtin.apt:
+     name: git 
+     state: present
+
+  
+  - name: clone repro
+    ansible.builtin.git:
+      repo: https://github.com/SeizeOx/IT-Test.git
+      dest: home 
+      
+    
+  
+

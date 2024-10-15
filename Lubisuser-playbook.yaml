@@ -1,0 +1,20 @@
+---
+
+- hosts: docker
+  become: true
+  tasks:
+    - name: Add the user "lubis" with a specific ID and group "sudo"
+      ansible.builtin.user:
+        name: lubis 
+        comment: lubisuser
+        uid: 1040
+        group: sudo 
+        create_home: yes 
+        shell: /bin/bash
+        generate_ssh_key: yes 
+        ssh_key_bits: 2048
+        ssh_key_file: .ssh/id_rsa
+        
+
+      
+

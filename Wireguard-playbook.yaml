@@ -1,0 +1,10 @@
+---
+
+- hosts: docker
+  become: true
+  tasks:
+    - name: Install Wireguard
+      ansible.builtin.apt:
+       name: wireguard-go
+       state: present
+
